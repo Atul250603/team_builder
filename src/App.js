@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Route, Routes } from 'react-router-dom';
+import mockdata from './mockData.json'
+import MainBody from './components/MainBody';
+import { useState } from 'react';
+import ViewTeam from './components/ViewTeam';
+import './App.css'
 function App() {
+  const [data,setData]=useState(mockdata);
+  const [team, setTeam] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='mainBody'>
+    <Routes>
+    <Route exact path="/" element={<MainBody mockdata={mockdata} setData={setData} data={data}  team={team} setTeam={setTeam}/>}/>
+    <Route exact path="/viewTeam" element={<ViewTeam mockdata={mockdata} setData={setData} data={data}  team={team} setTeam={setTeam}/>}/>
+      </Routes>
+    
     </div>
   );
 }

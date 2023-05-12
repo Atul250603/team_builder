@@ -1,38 +1,229 @@
-.App {
-  text-align: center;
+.main{
+    width: 100%;
+    padding: 20px;
+}
+.topBar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchBar{
+    width: 90%;
+    text-align: center;
+}
+.searchBar input{
+    padding: 5px;
+    width: 70%;
+    border-radius: 10px;
+}
+.filters{
+    border: 2px solid royalblue;
+    color: white;
+    background-color: royalblue;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+.title{
+    font-weight: bolder;
+}
+.filters .data{
+    width: 100%;
+    padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.subtitle{
+    font-weight: bold;
+    padding: 10px 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.filterItems span{
+    margin-right: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.filterItems span label{
+    padding-right: 5px;
 }
-
-.App-link {
-  color: #61dafb;
+.viewTeam{
+    width: 10%;
 }
+.viewTeam a{
+    border: 1px solid royalblue;
+    background-color: royalblue;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+    text-decoration:none ;
+}
+.cards{
+    margin: 20px 0px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    text-align: center;
+}
+.card{
+    border: 1px solid royalblue;
+    border-radius: 10px;
+}
+.card .image{
+    width: 100%;
+    border-radius:10px 10px 0 0;
+    background-color: royalblue;
+}
+.card .image img{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 50%;
+}
+.card .image,.card .data{
+    padding: 10px;
+}
+.btn{
+    width: 100%;
+    text-align: center;
+}
+.btn button{
+    border-radius: 10px;
+    margin: 5px 0;
+    padding: 8px;
+    
+}
+.addBtn{
+    background-color: royalblue;
+    border: 2px solid royalblue;
+    color: white;
+    cursor:pointer;
+}
+.addBtn:hover{
+    background: white;
+    color: royalblue;
+}
+.removeBtn{
+    background-color: red;
+    border: 2px solid red;
+    color: white;
+    cursor:pointer;
+    display: none;
+}
+.removeBtn:hover{
+    background: white;
+    color: red;
+}
+.disabled{
+    cursor:not-allowed;
+}
+.pagination{
+    width: 100%;
+    text-align: center;
+}
+.pagination button{
+    padding: 5px;
+    margin: 5px;
+    cursor:pointer;
+    background-color: royalblue;
+    border: 2px solid royalblue;
+    color: white;
+    border-radius: 5px;
+}
+.pagination button:hover{
+    background: white;
+    color: royalblue;
+}
+.viewTeamCards{
+    text-align: center;
+    padding: 20px;
+}
+.viewTeamCards .heading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+.viewTeamCards .heading .backBtn{
+    width: 10%;
+}
+.viewTeamCards .heading .backBtn button{
+    padding: 5px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid royalblue;
+    color: royalblue;
+    font-size: large;
+    cursor: pointer;
+}
+.viewTeamCards .heading .title{
+    width: 90%;
+    text-align: center;
+    color: royalblue;
+}
+.viewTeamCards .cards{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    text-align: center;
+}
+@media only screen and (max-width:1196px){
+    .cards,.viewTeamCards .cards{
+        
+        grid-template-columns: repeat(4,1fr);
+        
+    }
+}
+@media only screen and (max-width:980px){
+    .cards,.viewTeamCards .cards{
+        
+        grid-template-columns: repeat(3,1fr);
+        
+    }
+    .searchBar{
+        width: 80%;
+    }
+    .viewTeam{
+        width: 20%;
+    }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+@media only screen and (max-width:750px){
+    .cards,.viewTeamCards .cards{
+        
+        grid-template-columns: repeat(2,1fr);
+        
+    }
+}
+@media only screen and (max-width:530px){
+    .cards,.viewTeamCards .cards{
+        
+        grid-template-columns: repeat(1,1fr);
+        
+    }
+    .searchBar{
+        width: 70%;
+    }
+    .searchBar input{
+        width: 90%;
+    }
+    .viewTeam{
+        width: 30%;
+    }
+}
+@media only screen and (max-width:380px){
+    .searchBar{
+        width: 60%;
+    }
+    .viewTeam{
+        width: 40%;
+    }
+}
+@media only screen and (max-width:300px){
+    .main{
+        padding: 10px;
+    }
+    .viewTeamCards{
+        padding: 10px;
+    }
 }
